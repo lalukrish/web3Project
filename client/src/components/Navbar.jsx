@@ -14,14 +14,6 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-// interface Props {
-//   /**
-//    * Injected by the documentation to work in an iframe.
-//    * You won't need it on your project.
-//    */
-//   window?: () => Window;
-// }
-
 const drawerWidth = 240;
 const navItems = ["Market", "Exchange", "Tutorial", "Wallet"];
 
@@ -36,7 +28,7 @@ export default function Navbar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        lallu
+        famkiToken
       </Typography>
       <Divider />
       <List>
@@ -57,7 +49,7 @@ export default function Navbar(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" sx={{ color: "red", backgroundColor: "black" }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -98,15 +90,16 @@ export default function Navbar(props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              backdropFilter: "blur(8px)", // Apply the glass effect
+              background: "rgba(255, 255, 255, 0.5)", // Adjust the transparency and color as needed
             },
           }}
         >
           {drawer}
         </Drawer>
       </Box>
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-        <Typography>hi</Typography>
+      <Box component="main" sx={{ p: 4 }}>
+        {/* <Toolbar /> */}
       </Box>
     </Box>
   );
